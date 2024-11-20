@@ -1,34 +1,39 @@
 # CatchAlphabets Game - Computer Organization and Assembly Language (COAL)
 
 ## Project Description
-**CatchAlphabets** is an interactive game developed for the **Intel 8088 microprocessor**, showcasing low-level assembly language programming skills. The game runs on **DOSBox** with NASM, allowing players to control a **bucket** and catch falling alphabets to score points while avoiding penalties. It features dynamic gameplay and creative endgame elements, making it an excellent demonstration of interrupt handling, custom functions, and real-time user interaction.
+**CatchAlphabets** is an interactive game developed for the **Intel 8088 microprocessor**, showcasing low-level assembly language programming skills. The game runs on **DOSBox** with NASM, allowing players to control a **bucket** and catch falling alphabets to score points while avoiding penalties. It features a main menu, dynamic gameplay, and creative endgame elements, making it an excellent demonstration of interrupt handling, custom functions, and real-time user interaction.
 
 ---
 
 ## Features
 
 ### **Core Gameplay**:
-1. **Bucket Mechanics**:
+1. **Main Menu**:
+   - At launch, a **main page** is displayed prompting the user to:
+     - **Press any key (except Esc)** to start the game.
+     - Pressing **Esc** displays the credits and exits the program.
+
+2. **Bucket Mechanics**:
    - A **bucket** (`ASCII value 0xDC`) is displayed at the **bottom-middle** of the screen when the game starts.
    - The bucket can be moved using the **arrow keys**:
      - **Left Arrow** (`0x4B`): Move the bucket left.
      - **Right Arrow** (`0x4D`): Move the bucket right.
 
-2. **Falling Alphabets**:
-   - Alphabets (`A-Z`) appear at random positions in the top row and fall towards the bucket.
+3. **Falling Alphabets**:
+   - Alphabets (`A-Z`) appear at random positions in the top row and fall toward the bucket.
    - At least **5 alphabets** fall simultaneously at varying speeds.
    - The speed of falling alphabets can be adjusted in the **source code**.
 
-3. **Scoring System**:
+4. **Scoring System**:
    - Catching an alphabet adds **1 point** to the score.
    - The score is displayed in the **top-right corner** of the screen.
 
-4. **Game Over Condition**:
+5. **Game Over Condition**:
    - Missing **10 alphabets** ends the game.
-   - The player's final score is displayed in the **middle of the screen** for a few seconds before transitioning to the credits.
+   - The player's **final score** is displayed in the **middle of the screen** for a few seconds before transitioning to the credits.
 
-5. **Credits Scroll**:
-   - After displaying the score, a scrolling credits screen plays to conclude the game.
+6. **Credits Scroll**:
+   - After displaying the final score or pressing **Esc** at the main menu, a scrolling credits screen plays to conclude the game.
 
 ---
 
@@ -47,12 +52,17 @@
 ---
 
 ## Gameplay Instructions
-1. **Start the Game**: The game starts automatically when you run the program.
+1. **Main Menu**:
+   - Press any key (except **Esc**) to start the game.
+   - Press **Esc** to display the credits and exit.
+
 2. **Move the Bucket**:
    - Use the **left arrow key** (`0x4B`) to move the bucket left.
    - Use the **right arrow key** (`0x4D`) to move the bucket right.
+
 3. **Catch Alphabets**:
    - Align the bucket with falling alphabets to catch them and score points.
+
 4. **Avoid Misses**:
    - The game ends if **10 alphabets** are missed.
 
@@ -67,8 +77,8 @@
   The falling speed of alphabets can be modified in the **source code**.
 - **Score Display on Game Over**:  
   At the end of the game, the final score is shown in the **middle of the screen** for a few seconds.
-- **Credits Scroll**:  
-  A visually appealing scrolling credits screen concludes the game.
+- **Main Menu and Credits**:  
+  A main menu prompts the user to start or quit. A scrolling credits screen concludes the game.
 
 ---
 
@@ -93,7 +103,7 @@
 ---
 
 ## Credits
-- **Developer**: Muhammad Rahim  (Rebelhere)
+- **Developer**: Muhammad Rahim (*Rebelhere*)  
 - **Special Thanks**: Ayesha Younus  
 
 **CatchAlphabets - A nostalgic and exciting gaming experience on the Intel 8088!**
@@ -101,15 +111,17 @@
 ---
 
 ## Contributing
-
 Feel free to open issues or submit pull requests for improvements or bug fixes.
 
-## Collaboration Guidelines
+---
 
+## Collaboration Guidelines
 We welcome contributions from the open-source community. If you'd like to collaborate on this project, please adhere to the following guidelines:
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix.
 3. Implement your changes and commit them with descriptive messages.
 4. Push your branch to your fork and submit a pull request.
+
+---
 
 ### Feel free to reach out if you have any questions or suggestions !
