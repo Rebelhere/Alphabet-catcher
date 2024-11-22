@@ -1,7 +1,7 @@
 # CatchAlphabets Game - Computer Organization and Assembly Language (COAL)
 
 ## Project Description
-**CatchAlphabets** is an interactive game developed for the **Intel 8088 microprocessor**, showcasing low-level assembly language programming skills. The game runs on **DOSBox** with NASM, allowing players to control a **bucket** and catch falling alphabets to score points while avoiding penalties. It features a main menu, dynamic gameplay, and creative endgame elements, making it an excellent demonstration of interrupt handling, custom functions, and real-time user interaction.
+**CatchAlphabets** is an interactive game developed for the **Intel 8088 microprocessor**, showcasing low-level assembly language programming skills. The game runs on **DOSBox** with NASM, allowing players to control a **bucket** and catch falling alphabets to score points while avoiding penalties. It features a main menu, dynamic gameplay, increasing difficulty over time, and creative endgame elements, making it an excellent demonstration of interrupt handling, custom functions, and real-time user interaction.
 
 ---
 
@@ -22,7 +22,7 @@
 3. **Falling Alphabets**:
    - Alphabets (`A-Z`) appear at random positions in the top row and fall toward the bucket.
    - At least **5 alphabets** fall simultaneously at varying speeds.
-   - The speed of falling alphabets can be adjusted in the **source code**.
+   - The speed of falling alphabets **automatically increases** at **20 seconds** and again at **40 seconds**, tracked using the **INT 8h hardware interrupt**.
 
 4. **Scoring System**:
    - Catching an alphabet adds **1 point** to the score.
@@ -30,10 +30,10 @@
 
 5. **Game Over Condition**:
    - Missing **10 alphabets** ends the game.
-   - The player's **final score** is displayed in the **middle of the screen** for a few seconds before transitioning to the credits.
+   - The player's **final score** and **total time played** are displayed in the **middle of the screen** for a few seconds before transitioning to the credits.
 
 6. **Credits Scroll**:
-   - After displaying the final score or pressing **Esc** at the main menu, a scrolling credits screen plays to conclude the game.
+   - After displaying the final score and time or pressing **Esc** at the main menu, a scrolling credits screen plays to conclude the game.
 
 ---
 
@@ -66,6 +66,9 @@
 4. **Avoid Misses**:
    - The game ends if **10 alphabets** are missed.
 
+5. **Time-Based Difficulty**:
+   - The speed of falling alphabets increases at **20 seconds** and **40 seconds**, adding to the challenge.
+
 ---
 
 ## Code Features
@@ -73,37 +76,34 @@
   Generates random positions and speeds for falling alphabets.
 - **Real-Time Input**:  
   Hooks into **INT 9h** for responsive keyboard controls.
+- **Time Tracking**:  
+  Uses **INT 8h hardware interrupt** to track elapsed time and dynamically adjust difficulty.
 - **Adjustable Speed**:  
-  The falling speed of alphabets can be modified in the **source code**.
-- **Score Display on Game Over**:  
-  At the end of the game, the final score is shown in the **middle of the screen** for a few seconds.
+  Falling speeds increase automatically based on time, adding progressive difficulty.
+- **Score and Time Display**:  
+  At the end of the game, the final score and total time played are shown in the **middle of the screen**.
 - **Main Menu and Credits**:  
   A main menu prompts the user to start or quit. A scrolling credits screen concludes the game.
 
 ---
 
 ## Future Enhancements
-1. **Level System**:
-   - Introduce progressive levels, increasing difficulty with:
-     - Faster alphabets.
-     - More falling items simultaneously.
-
-2. **Bomb Mechanic**:
+1. **Bomb Mechanic**:
    - Add **bombs** that fall alongside alphabets.
    - If the bucket catches a bomb, the player experiences an **instant game over**.
 
-3. **Power-Ups**:
+2. **Power-Ups**:
    - Introduce special alphabets that grant bonuses, such as:
      - Double points.
      - Temporarily slowing down falling items.
 
-4. **Sound Effects**:
+3. **Sound Effects**:
    - Add audio cues for catching alphabets, missing them, and the game over.
 
 ---
 
 ## Credits
-- **Developer**: Muhammad Rahim (*Rebelhere*)  
+- **Developer**: Muhammad Rahim (Rebelhere)  
 - **Special Thanks**: Ayesha Younus  
 
 **CatchAlphabets - A nostalgic and exciting gaming experience on the Intel 8088!**
@@ -125,3 +125,7 @@ We welcome contributions from the open-source community. If you'd like to collab
 ---
 
 ### Feel free to reach out if you have any questions or suggestions !
+
+---
+
+**CatchAlphabets: Relive the thrill of coding and gaming in the 8088 era!**
