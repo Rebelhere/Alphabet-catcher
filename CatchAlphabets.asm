@@ -657,10 +657,10 @@ jge l1
 mov bx,[seconds]
 call delay
 call delay
-cmp bx,40
+cmp bx,20
 jg meet
 call delay
-cmp bx,20
+cmp bx,10
 jg meet
 call delay
 
