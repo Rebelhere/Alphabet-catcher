@@ -22,7 +22,7 @@
 3. **Falling Alphabets**:
    - Alphabets (`A-Z`) appear at random positions in the top row and fall toward the bucket.
    - At least **5 alphabets** fall simultaneously at varying speeds.
-   - The speed of falling alphabets **automatically increases** at **20 seconds** and again at **40 seconds**, tracked using the **INT 8h hardware interrupt**.
+   - The speed of falling alphabets **automatically increases** at **10 seconds** and again at **20 seconds**, tracked using the **INT 8h hardware interrupt**.
 
 4. **Scoring System**:
    - Catching an alphabet adds **1 point** to the score.
